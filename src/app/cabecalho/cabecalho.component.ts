@@ -7,14 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CabecalhoComponent implements OnInit {
 
-  titulo: string = 'Meu lindo cabeçalho!';
-  texto: string = 'Algum texto';
 
   constructor() { }
 
   ngOnInit(): void {
   }
-  ola(){
-    alert("opa " +this.texto);
-  }
+  
 }
