@@ -6,13 +6,15 @@ import { LayoutComponent } from './layout/layout.component';
 import { CabecalhoComponent } from './cabecalho/cabecalho.component';
 import { BarraLateralComponent } from './barra-lateral/barra-lateral.component';
 import { FormsModule } from '@angular/forms';
+import { PessoaComponent } from './pessoa/pessoa.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LayoutComponent,
     CabecalhoComponent,
-    BarraLateralComponent
+    BarraLateralComponent,
+    PessoaComponent
   ],
   imports: [
     BrowserModule,

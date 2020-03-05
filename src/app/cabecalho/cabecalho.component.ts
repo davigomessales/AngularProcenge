@@ -7,10 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CabecalhoComponent implements OnInit {
 
-
+  tituloCabecalho: String = "Titulo do Cabecalho."
   constructor() { }
 
   ngOnInit(): void {
   }
-  
 }

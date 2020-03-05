@@ -7,9 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BarraLateralComponent implements OnInit {
 
-  tituloBarra: string = "Meu lindo titulo de barra!"
-  
-
+  tituloBarra = 'Título da barra lateral!';
   constructor() { }
 
   ngOnInit(): void {

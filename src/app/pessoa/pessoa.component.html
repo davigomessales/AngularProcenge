@@ -1,0 +1,55 @@
+<app-layout>
+        <h1 [textContent]="titulo"></h1>
+        <label for="">Codigo: </label>
+        <input type="text" [(ngModel)]="pessoa.codigo" name="codigo"><br>
+        <label for="">Nome: </label>
+        <input type="text" [(ngModel)]="pessoa.nome" name="nome"><br>
+        <label for="">Telefone: </label>
+        <input type="text" [(ngModel)]="pessoa.telefone" name="telefone">
+
+        <label for="">Data de Nascimento: </label>
+        <input type="text" [(ngModel)]="pessoa.dataNascimento" name="nascimento"><br>
+        <label for="">Endereço: </label>
+        <input type="text" [(ngModel)]="pessoa.endereco" name="endereco"><br>
+        <label for="">Bairro: </label>
+        <input type="text" [(ngModel)]="pessoa.bairro" name="bairro">
+
+        <label for="">Cidade: </label>
+        <input type="text" [(ngModel)]="pessoa.cidade" name="cidade"><br>
+        <label for="">Estado: </label>
+        <input type="text" [(ngModel)]="pessoa.estado" name="estado"><br>
+        <label for="">Está ativo? </label>
+        <br>
+        <input type="radio" [(ngModel)]="pessoa.isAtivo" name="ativo" [value]="true">Sim<br>
+        <input type="radio" [(ngModel)]="pessoa.isAtivo" name="ativo" [value]="false">Não<br>
+        <br><br>
+        <button (click)="incluirPessoa()">Incluir Pessoa</button>
+        <button (click)="editarPessoa()">Editar Pessoa</button>
+        <!-- <button class="btn btn-success" (click)="imprimir()" type="submit">OK</button> -->
+        <br><br>
+        <table border="1">
+                <tr>
+                        <th>Codigo</th>
+                        <th>Nome</th>
+                        <th>Telefone</th>
+                        <th>Data de Nascimento</th>
+                        <th>Endereço</th>
+                        <th>Cidade</th>
+                        <th>Estado</th>
+                        <th>Está ativo?</th>
+                </tr>
+                <tr *ngFor="let pessoa of listaPessoas">
+                        <td>{{ pessoa.codigo }}</td>
+                        <td>{{ pessoa.nome }}</td>
+                        <td>{{ pessoa.telefone }}</td>
+                        <td>{{ pessoa.dataNascimento }}</td>
+                        <td>{{ pessoa.endereco }}</td>
+                        <td>{{ pessoa.cidade }}</td>
+                        <td>{{ pessoa.estado }}</td>
+                        <td *ngIf="pessoa.isAtivo">Sim</td>
+                        <td *ngIf="!pessoa.isAtivo">Não</td>
+
+                </tr>
+        </table>
+
+</app-layout>
