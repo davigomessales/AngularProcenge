@@ -1,0 +1,49 @@
+<h3>Meu cadastro de Produto</h3>
+<h5>Cadastro de Produtos</h5>
+
+<br><label for="">Codigo:</label>
+<input type="text" [(ngModel)]="produto.codigo">
+<br><label for="">Nome:</label>
+<input type="text" [(ngModel)]="produto.nome">
+<br><label for="">Descrição:</label>
+<input type="text" [(ngModel)]="produto.descricao">
+<br><label for="">Data de Validade:</label>
+<input type="date" [(ngModel)]="produto.dataValidade">
+<br><label for="">Quantidade:</label>
+<input type="number" [(ngModel)]="produto.quantidade">
+<br><label for="">Unidade de Medida:</label>
+<select [(ngModel)]="produto.unidadeMedida">
+    <option *ngFor="let produto of unidadeMedidas" [ngValue]="produto">{{ produto }}</option>
+</select>
+<br>
+<button (click)="incluirProduto()">Incluir Produto</button>
+<br><br>
+<h5>Lista de Produtos</h5>
+
+<p *ngIf="listaProdutos.length == 0">Nenhum Produto foi adicionado</p>
+<div>
+<table border="1" *ngIf="listaProdutos.length > 0">
+    <tr>
+        <th>codigo</th>
+        <th>nome</th>
+        <th>descricao</th>
+        <th>dataValidade</th>
+        <th>quantidade</th>
+        <th>unidadeMedida</th>
+        <!-- <th>Está Ativo?</th> -->
+        <th>Ações</th>
+    </tr>
+    <tr *ngFor="let produto of listaProdutos">
+        <td>{{ produto.codigo }}</td>
+        <td>{{ produto.nome }}</td>
+        <td>{{ produto.descricao }}</td>
+        <td>{{ produto.dataValidade }}</td>
+        <td>{{ produto.quantidade }}</td>
+        <td>{{ produto.unidadeMedida }}</td>
+        <!-- <td *ngIf="produto.isAtivo">Sim</td>
+        <td *ngIf="!produto.isAtivo && produto.isAtivo!=undefined">Não</td> -->
+        <td><button (click)="removerProduto(produto)">Excluir Produto</button></td>
+
+    </tr>
+</table>
+</div>

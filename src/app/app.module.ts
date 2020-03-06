@@ -7,6 +7,7 @@ import { CabecalhoComponent } from './cabecalho/cabecalho.component';
 import { BarraLateralComponent } from './barra-lateral/barra-lateral.component';
 import { FormsModule } from '@angular/forms';
 import { PessoaComponent } from './pessoa/pessoa.component';
+import { ProdutoComponent } from './produto/produto.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { PessoaComponent } from './pessoa/pessoa.component';
     LayoutComponent,
     CabecalhoComponent,
     BarraLateralComponent,
-    PessoaComponent
+    PessoaComponent,
+    ProdutoComponent
   ],
   imports: [
     BrowserModule,
