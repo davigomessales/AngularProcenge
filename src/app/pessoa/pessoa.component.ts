@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Pessoa } from './../pessoa/Pessoa';
 
 @Component({
@@ -71,40 +71,22 @@ export class PessoaComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  incluirPessoa() {
-    this.listaPessoas.push(this.pessoa);
-    this.pessoa = new Pessoa();
-  }
-
   removerPessoa(pessoa) {
     this.listaPessoas = this.listaPessoas.filter(
       obj => obj !== pessoa
     );
   }
-  inverterMostrar() {
-    this.mostrar = !this.mostrar;
+
+  editarPessoa(pessoa){
+    this.pessoa = pessoa;
+    console.log("pessoa para edição", pessoa);
   }
 
-  carregarCidade(){
-    switch(this.pessoa.estado){
-      case 'PE':{
-        this.listaMunicipios = [
-          {
-            "codigo": "01",
-            "cidade": "Recife"
-          }
-        ]
-        break;
-      }
-      case 'PB':{
-        this.listaMunicipios = [
-          {
-            "codigo": "02",
-            "cidade": "Joao Pessoa"
-          }
-        ]
-        break;
-      }
-    }
+  adicionarPessoa(pessoa) {
+    this.listaPessoas = this.listaPessoas.filter(
+      obj => obj !== pessoa
+    );
+    this.listaPessoas.push(pessoa);
   }
+
 }
